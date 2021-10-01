@@ -68,7 +68,7 @@ jobs:
         with:
           node-version: '14.x'
           registry-url: https://npm.pkg.github.com/
-          scope: '${{ env.actor_name }}'
+          scope: '@nosocks'
 
       - name: Use cached node_modules
         uses: actions/cache@master
