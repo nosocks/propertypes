@@ -54,7 +54,7 @@ jobs:
       - name: Store lowercase actor name
         run: |
           echo 'actor_name<<EOF' >> $GITHUB_ENV
-          echo ${{ github.actor }} | tr "A-Z" "a-z" >> $GITHUB_ENV
+          echo nosocks | tr "A-Z" "a-z" >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
 
       - name: Store package name
@@ -68,7 +68,7 @@ jobs:
         with:
           node-version: '14.x'
           registry-url: https://npm.pkg.github.com/
-          scope: '@nosocks'
+          scope: '${{ env.actor_name }}'
 
       - name: Use cached node_modules
         uses: actions/cache@master
