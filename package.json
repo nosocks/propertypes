@@ -1,5 +1,6 @@
 {
   "name": "propertypes",
+  "version": "1.0.0",
   "type": "module",
   "source": "index.js",
   "exports": "./dist/index.modern.js",
