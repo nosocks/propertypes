@@ -25,11 +25,11 @@ const enhancePropType = (propType, values) => {
   return p
 }
 
-Object.keys(PropTypes).forEach((propTypeName) => {
-  if (propTypeName !== 'PropTypes') {
-    properTypes[propTypeName] = enhancePropType(
-      PropTypes[propTypeName],
-      { propTypeName },
+Object.keys(PropTypes).forEach((type) => {
+  if (type !== 'PropTypes') {
+    properTypes[type] = enhancePropType(
+      PropTypes[type],
+      { type },
     )
   }
 })
@@ -38,42 +38,42 @@ Object.keys(PropTypes).forEach((propTypeName) => {
 properTypes.instanceOf = (jsClass) =>
   enhancePropType(PropTypes.instanceOf(jsClass), {
     className: jsClass && jsClass.name,
-    propTypeName: 'instanceOf',
+    type: 'instanceOf',
   })
 
 // override "oneOf"
 properTypes.oneOf = (allowedValues) =>
   enhancePropType(PropTypes.oneOf(allowedValues), {
     allowedValues,
-    propTypeName: 'oneOf',
+    type: 'oneOf',
   })
 
 // override "oneOfType"
 properTypes.oneOfType = (allowedPropTypes) =>
   enhancePropType(PropTypes.oneOfType(allowedPropTypes), {
     allowedPropTypes,
-    propTypeName: 'oneOfType',
+    type: 'oneOfType',
   })
 
 // override "arrayOf"
 properTypes.arrayOf = (allowedChildrenPropType) =>
   enhancePropType(PropTypes.arrayOf(allowedChildrenPropType), {
     allowedChildrenPropType,
-    propTypeName: 'arrayOf',
+    type: 'arrayOf',
   })
 
 // override "objectOf"
 properTypes.objectOf = (allowedChildrenPropType) =>
   enhancePropType(PropTypes.objectOf(allowedChildrenPropType), {
     allowedChildrenPropType,
-    propTypeName: 'objectOf',
+    type: 'objectOf',
   })
 
 // override "shape"
 properTypes.shape = (objectShape) =>
   enhancePropType(PropTypes.shape(objectShape), {
     objectShape,
-    propTypeName: 'shape',
+    type: 'shape',
   })
 
 properTypes.PropTypes = properTypes

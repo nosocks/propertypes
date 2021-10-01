@@ -7,5 +7,5 @@ Test.propTypes = {
 }
 
 test('Component has "a" prop with valid propTypeName info', () => {
-  expect(Test.propTypes.a.info.propTypeName).toBe('string')
+  expect(Test.propTypes.a.info.type).toBe('string')
 })
