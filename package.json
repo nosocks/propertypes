@@ -7,9 +7,16 @@
   "module": "./dist/index.module.js",
   "unpkg": "./dist/index.umd.js",
   "scripts": {
-    "build": "microbundle",
+    "build": "microbundle build --external react=React,prop-types/factoryWithTypeCheckers=prop-types",
     "dev": "microbundle watch",
     "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nosocks/propertypes.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry-url"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
