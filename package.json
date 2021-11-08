@@ -1,5 +1,5 @@
 {
-  "name": "propertypes",
+  "name": "@nosocks/propertypes",
   "version": "1.0.0",
   "type": "module",
   "source": "index.js",
